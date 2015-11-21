@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Transfer Students</title>
+	<link rel="stylesheet" type="text/css" href="Test.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="function.js" type="text/javascript"></script>
+</head>
+
+<body>   
+
+	<div id="header">
+	
+		<div id="buttons">
+			<a href="http://www.marist.edu/about/"><img src="Images/About-Marist.png"></img></a>
+
+
+
+			<a href="http://www.marist.edu/admission/"><img src="Images/Academics.png"></img></a>
+
+		
+
+			<a href="http://www.marist.edu/academics/"><img src="Images/Admission.png"></img></a>
+
+		
+
+			<a href="http://www.marist.edu/studentlife/"><img src="Images/Athletics.png"></img></a>
+
+		
+
+			<a href="http://www.marist.edu/athletics/"><img src="Images/Community.png"></img></a>
+
+		
+
+			<a href="http://www.marist.edu/community/"><img src="Images/Student-Life.png"></img></a>
+
+		</div><!--End buttons-->
+		
+		<img class="logo" src="Images/logo.png"></img>
+	</div><!--End Header-->
+	
+	<div id="main">
+	
+		<div id="leftnavigation">
+	
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Transfer-Students-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Apply-for-Admission-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Scholarships-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Check-Application-Status.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Visiting-Marist-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Request-Information-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Majors-and-Minors-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Transferring-Credits-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Information-for-Incoming-Transfer-Students-Button.gif"></img></a>
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/FAQ-Button.gif"></img></a>
+		</div><!--End left-navigation-->
+	
+		<div class="table-responsive">
+
+			<h1> Conversion Page </h1>
+			<p> <select id = "dropdown1">
+				<option value="AppliedMath" selected = "selected">Applied Math</option>
+				<option value="CriminalJustice">Criminal Justice</option>
+				<option value="GameDevelopment">Game Development</option>
+				<option value="Math">Math</option>
+			</select>
+				<input type ="button" value="Check Classes" onclick="changeClass()" class="btn btn-success"><br>
+			<table border = "1" id ="classTable" class="table table-bordered table-hover table-condensed" bgcolor="#deb887">
+				<thead>
+				<tr>
+				</tr>
+				</thead>
+				<input type="button" id="conButton" value="DCCConversions" onclick ="Conversion()" style="visibility: hidden">
+			</table>
+			<table border="1" id="conversionTable" class="table table-bordered table-hover table-condensed">
+				<tr>
+
+				</tr>
+
+			</table>
+		</div>
+
+	
+	</div><!--End main-->
+</body>
+
+</html>
