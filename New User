@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Transfer Students</title>
+	<link rel="stylesheet" type="text/css" href="Test.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="function.js" type="text/javascript"></script>
+</head>
+
+<body>   
+
+	<div id="header">
+	
+		<div id="buttons">
+			<a href="http://www.marist.edu/about/"><img src="Images/About-Marist.png"/></a> <!--Change File Path-->
+
+
+
+			<a href="http://www.marist.edu/admission/"><img src="Images/Academics.png"/></a> <!--Change File Path-->
+
+		
+
+			<a href="http://www.marist.edu/academics/"><img src="Images/Admission.png"/></a> <!--Change File Path-->
+
+		
+
+			<a href="http://www.marist.edu/studentlife/"><img src="Images/Athletics.png"/></a> <!--Change File Path-->
+
+		
+
+			<a href="http://www.marist.edu/athletics/"><img src="Images/Community.png"/></a> <!--Change File Path-->
+
+		
+
+			<a href="http://www.marist.edu/community/"><img src="Images/Student-Life.png"/></a> <!--Change File Path-->
+
+		</div><!--End buttons-->
+		
+		<img class="logo" src="Images/logo.png"/>
+	</div><!--End Header-->
+
+	
+		<div id="leftnavigation">
+	
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Transfer-Students-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Apply-for-Admission-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Scholarships-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Check-Application-Status.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Visiting-Marist-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Request-Information-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Majors-and-Minors-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Transferring-Credits-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/Information-for-Incoming-Transfer-Students-Button.gif"/></a> <!--Change File Path-->
+		
+			<a href="http://www.marist.edu/admission/transfer/"><img src="Images/FAQ-Button.gif"/></a>
+		</div><!--End left-navigation-->
+	<div class="row">
+		<form role="form">
+			<div class="form-group form-condensed col-xs-8">
+				<label for="usr">Email Address (Login ID)</label>
+				<input type="text" class="form-control" id="usr">
+			</div>
+			<div class="form-group form-condensed col-xs-8">
+				<label for="pwd">Password</label>
+				<input type="password" class="form-control" id="pwd">
+			</div>
+			<br>
+			<div class="form-group form-condensed col-xs-8">
+				<label for="pwd">Re-type Password</label>
+				<input type="password" class="form-control" id="repwd">
+			</div>
+			<br>
+			<div class="form-group form-condensed col-xs-8">
+				<label for="pwd">First Name</label>
+				<input type="password" class="form-control" id="FirstName">
+			</div>
+			<br>
+			<div class="form-group form-condensed col-xs-8">
+				<label for="pwd">Last Name</label>
+				<input type="password" class="form-control" id="LastName">
+			</div>
+			<br>
+		</form>
+	</div><!--End main-->
+	<button type ="button" class="btn btn-primary center-block">Register Now</button>
+</body>
+
+</html>
