@@ -1,5 +1,5 @@
 <?php
-$host = "host=10.10.7.184";
+$host = "host=localhost";
 $port = "port=5432";
 $dbname = "dbname=CappingDB";
 $credentials = "user=postgres password=CMPT475L";
