@@ -1,0 +1,115 @@
+/* Clint Dorman, Hiroki Hayashi, Bryan Rockwood, James Sior, and Miles Welsh
+ * Capping Project
+ * November 16, 2015
+ * Changed formatting and some data types to take advantage of Postgres
+ * Added MajorName, MCourse_Number,
+ * Have to decide how we are dealing with the N/L in courses and true/false for major requirements...
+ */
+
+ --Drop the tables first--
+ DROP TABLE IF EXISTS Student;
+ DROP TABLE IF EXISTS Schools;
+ DROP TABLE IF EXISTS MaristCourses;
+ DROP TABLE IF EXISTS Majors;
+ DROP TABLE IF EXISTS DccCourses;
+ DROP TABLE IF EXISTS DccTrans;
+ DROP TABLE IF EXISTS Equivalencies;
+ DROP TABLE IF EXISTS Teacher;
+ DROP TABLE IF EXISTS ChangeLog;
+
+--Create statements to instantiate tables--
+
+--Student--
+    CREATE TABLE Student (
+    StudentID         SERIAL,
+    SLogin             varchar(30) NOT NULL,
+    SPassword          varchar(30) NOT NULL,  Ñ-Password needs to be encrypted--
+    SFirst_Name        varchar(20) NOT NULL,
+    SLast_Name         varchar(20) NOT NULL,
+    SEmailAddress      varchar(50) NOT NULL,
+    SCurrent_College   varchar(50) NOT NULL,
+    SMaristStartDate   date        NOT NULL,  --8 fix characters (MM/DD/YYYY)--
+    SMajor_Of_Interest varchar(30) NOT NULL,
+    UNIQUE(SEmailAddress),
+    UNIQUE(SLogin),
+    primary key(StudentID)
+    ); 
+
+ --Schools--
+    CREATE TABLE Schools (
+    SchoolID SERIAL,
+    SchoolName varchar(50) NOT NULL,
+    SchoolDean varchar(30) NOT NULL,
+    UNIQUE(SchoolName),
+    UNIQUE(SchoolDean),
+    primary key(SchoolID)
+    );
+
+ --Majors-- 
+    CREATE TABLE Majors (
+    MajorID SERIAL,
+    Concentration varchar(30),
+    MajorName varchar(30) NOT NULL,
+    SchoolID int NOT NULL references Schools(SchoolID),
+    UNIQUE(MajorName),
+    primary key(MajorID)
+    );
+
+ --MaristCourses--
+    CREATE TABLE MaristCourses (
+    MCourse_ID 		SERIAL,
+    MCourse_Subject 	char(4) 	  NOT NULL,
+    MCourse_Number 	varchar(4)	  NOT NULL,
+    MCourse_Name 	varchar(50) 	  NOT NULL,
+    MCourse_Credit 	int        	  NOT NULL,
+    MajorID int NOT NULL references Majors(MajorID),
+    UNIQUE(MCourse_Name),
+    primary key(MCourse_ID)
+    );
+
+
+ --DccCourses-- 
+    CREATE TABLE DccCourses (
+    DccCourseID	 SERIAL,
+    DccCourse_Name varchar(50) NOT NULL,
+    DccCourse_Subject varchar(5) NOT NULL,
+    DccCourse_Credit int NOT NULL,
+    UNIQUE (DccCourse_Name),
+    primary key(DccCourseID)
+    );
+
+ --DccTrans--
+    CREATE TABLE DccTrans (
+    StudentID int NOT NULL references Student(StudentID),
+    DccCourseID	int NOT NULL references DccCourses(DccCourseID),
+    primary key(StudentID, DccCourseID)
+    );
+
+ --Equivalencies--
+    CREATE TABLE Equivalencies (
+    MCourse_ID int NOT NULL references MaristCourses(MCourse_ID),
+    DccCourseID int NOT NULL references DccCourses(DccCourseID),
+    primary key(MCourse_ID, DccCourseID)
+    );
+
+ --Teacher--
+    CREATE TABLE Teacher (
+    TeacherID SERIAL,
+    TLogin varchar(30) NOT NULL,
+    TPassword varchar(30) NOT NULL,  	--Password needs to be encrypted--
+    TFirst_Name varchar(20) NOT NULL,
+    TLast_Name varchar(20) NOT NULL,
+    TEmailAddress varchar(50) NOT NULL,
+    UNIQUE(TLogin),
+    UNIQUE(TEmailAddress),
+    primary key(TeacherID)      	
+    );
+
+ --ChangeLog--
+    CREATE TABLE ChangeLog (
+    TeacherID int NOT NULL references Teacher(TeacherID),
+    MCourse_ID int NOT NULL references MaristCourses(MCourse_ID),
+    Change_Date timestamp NOT NULL,
+    Change_Description varchar(100) NOT NULL,
+    primary key(TeacherID, MCourse_ID)
+    );
