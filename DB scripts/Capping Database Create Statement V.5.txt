@@ -73,6 +73,7 @@
     DccCourseID	 SERIAL,
     DccCourse_Name varchar(50) NOT NULL,
     DccCourse_Subject varchar(5) NOT NULL,
+    DccCourse_Number int NOT NULL,
     DccCourse_Credit int NOT NULL,
     UNIQUE (DccCourse_Name),
     primary key(DccCourseID)
