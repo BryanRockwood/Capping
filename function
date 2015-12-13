@@ -1,0 +1,270 @@
+/**
+ * Created by thorwald on 11/9/15.
+ */
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+function major(String) {
+    var Class1 = document.getElementsByName("optradio1");
+    var Index = document.getElementById("ComputerMath");
+    var Class = document.getElementById("Class1");
+    if (String === 'CriminalJustice') {
+        $("label[for='optradio1']").text('Composition 1');
+        $("label[for='optradio2']").text('Social Problems in Today World');
+        $("label[for='optradio3']").text('Criminology');
+        $("label[for='optradio4']").text('Social Psychology');
+        $("label[for='optradio5']").text('Group Dynamics');
+        $("label[for='optradio6']").text('White Collar Crime');
+    }
+     else if (String === 'ComputerScience') {
+        $("label[for='optradio1']").text('Advanced Programming Techniques');
+        $("label[for='optradio2']").text('Data Structures');
+        $("label[for='optradio3']").text('Linear Algebra');
+        $("label[for='optradio4']").text('Assembler Language Programming');
+        $("label[for='optradio5']").text('Discrete Mathematics');
+        $("label[for='optradio6']").text('Analytic Geometry');
+    }
+    else if (String === 'Math') {
+        $("label[for='optradio1']").text('Intro to Linear Algebra');
+        $("label[for='optradio2']").text('Engineering Physics 1');
+        $("label[for='optradio3']").text('Engineering Physics 2');
+        $("label[for='optradio4']").text('Discrete Mathematics');
+        $("label[for='optradio5']").text('Introduction to Proofs');
+        $("label[for='optradio6']").text('Analytic Geometry Calculus 1');
+    }
+    else if (String === 'DigitalMedia') {
+        $("label[for='optradio1']").text('2d Design');
+        $("label[for='optradio2']").text('Visual Art Intro Seminar');
+        $("label[for='optradio3']").text('Drawing 1');
+        $("label[for='optradio4']").text('History of Art');
+        $("label[for='optradio5']").text('Color Theory & Painting');
+        $("label[for='optradio6']").text('American History');
+    }
+    else if (String === 'BusinessAdmin') {
+        $("label[for='optradio1']").text('Micro Economics');
+        $("label[for='optradio2']").text('Managerial Accounting');
+        $("label[for='optradio3']").text('Financial Accounting');
+        $("label[for='optradio4']").text('Business Law 1');
+        $("label[for='optradio5']").text('Macro Economics');
+        $("label[for='optradio6']").text('Elementary Statistics');
+    }
+    else if (String === 'Biology') {
+        $("label[for='optradio1']").text('General Chem 1');
+        $("label[for='optradio2']").text('General Biology 1');
+        $("label[for='optradio3']").text('Adolescent Psychology');
+        $("label[for='optradio4']").text('Lifetime Fitness and Wellness');
+        $("label[for='optradio5']").text('General Chem 2');
+        $("label[for='optradio6']").text('General Biology 2');
+    }
+}
+function checker(){
+    if($('input[id=optradio1]:checked')){
+        major('CriminalJustice');
+    }
+    else if($("input[id=optradio2]:checked")){
+        major('ComputerScience');
+    }
+    else if($('input[id=optradio3]:checked')){
+        major('Math');
+    }
+     else if($('input[id=optradio4]:checked')){
+        major('DigitalMedia');
+    }
+     else if($('input[id=optradio5]:checked')){
+        major('BusinessAdmin');
+    }
+    else if($('input[id=optradio6]:checked')){
+        major('Biology');
+    }
+    else {
+        alert("Please choose a Major in the list provided");
+    }
+
+}
+function changeClass() {
+    var tableClass = document.getElementById("classTable");
+    var index = document.getElementById("dropdown1");
+    document.getElementById("conButton").style.visibility = "visible";
+    tableClass.innerHTML= "";
+    if(index.value == "Math") {
+        var row = tableClass.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "Course Subject";
+        cell2.innerHTML = "Course Number";
+        cell3.innerHTML = "Title";
+        cell4.innerHTML = "Credits";
+        var row = tableClass.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "MATH";
+        cell2.innerHTML = "343";
+        cell3.innerHTML = "Calculus III";
+        cell4.innerHTML = "4";
+        var row = tableClass.insertRow(2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "MATH";
+        cell2.innerHTML = "205";
+        cell3.innerHTML = "Discrete Mathematics";
+        cell4.innerHTML = "4";
+        var row = tableClass.insertRow(3);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "MATH";
+        cell2.innerHTML = "424";
+        cell3.innerHTML = "Complex Analysis";
+        cell4.innerHTML = "4";
+
+    }
+    if(index.value == "AppliedMath") {
+        var row = tableClass.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "Course Subject";
+        cell2.innerHTML = "Course Number";
+        cell3.innerHTML = "Title";
+        cell4.innerHTML = "Credits";
+        var row = tableClass.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "PHYS";
+        cell2.innerHTML = "221";
+        cell3.innerHTML = "Modern Physics 1";
+        cell4.innerHTML = "3";
+        var row = tableClass.insertRow(2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "BIOL";
+        cell2.innerHTML = "130";
+        cell3.innerHTML = "General Biology 1";
+        cell4.innerHTML = "4";
+        var row = tableClass.insertRow(3);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "CMPT";
+        cell2.innerHTML = "220";
+        cell3.innerHTML = "Software Development 1";
+        cell4.innerHTML = "4";
+    }
+
+    if(index.value == "GameDevelopment") {
+        var row = tableClass.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "Course Subject";
+        cell2.innerHTML = "Course Number";
+        cell3.innerHTML = "Title";
+        cell4.innerHTML = "Credits";
+        var row = tableClass.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "CMPT";
+        cell2.innerHTML = "233";
+        cell3.innerHTML = "Game Development I";
+        cell4.innerHTML = "4";
+        var row = tableClass.insertRow(2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "CMPT";
+        cell2.innerHTML = "331";
+        cell3.innerHTML = "Formal Languages";
+        cell4.innerHTML = "3";
+        var row = tableClass.insertRow(3);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "CMPT";
+        cell2.innerHTML = "220";
+        cell3.innerHTML = "Software Development I";
+        cell4.innerHTML = "4";
+    }
+    if(index.value == "CriminalJustice") {
+        var row = tableClass.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "Course Subject";
+        cell2.innerHTML = "Course Number";
+        cell3.innerHTML = "Title";
+        cell4.innerHTML = "Credits";
+        var row = tableClass.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "COMM";
+        cell2.innerHTML = "103";
+        cell3.innerHTML = "Introduction to Media";
+        cell4.innerHTML = "3";
+        var row = tableClass.insertRow(2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "ENGL";
+        cell2.innerHTML = "331";
+        cell3.innerHTML = "Shakespearean Literature";
+        cell4.innerHTML = "3";
+        var row = tableClass.insertRow(3);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = "BUS";
+        cell2.innerHTML = "101";
+        cell3.innerHTML = "Intro to Business";
+        cell4.innerHTML = "3";
+    }
+
+}
+function Conversion(){
+    var tableClass = document.getElementById("conversionTable");
+    tableClass.innerHTML = "";
+    var row =tableClass.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = "Course Subject";
+    cell2.innerHTML = "Course Number";
+    cell3.innerHTML = "Title";
+    cell4.innerHTML = "Credits";
+    var row = tableClass.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = "Some Subject";
+    cell2.innerHTML = "Some Number";
+    cell3.innerHTML = "Some Title";
+    cell4.innerHTML = "Some Credits";
+
+}
+
+
